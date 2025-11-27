@@ -13,7 +13,7 @@ export default function Hero() {
 
 
   useEffect(() => {
-    fetch("http://localhost:5000/courseData") 
+    fetch("https://learn-wise-server.vercel.app/courseData") 
       .then((res) => res.json())
       .then((data) => setCourses(data.slice(0, 3))) 
       .catch((err) => console.log(err));

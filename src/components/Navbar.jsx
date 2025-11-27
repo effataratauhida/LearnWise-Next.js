@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -28,9 +29,10 @@ export default function Navbar() {
 
           {/* Login button */}
           <div className="hidden md:flex">
-            <button className="bg-[#19183B] text-[#E7F2EF] font-semibold px-6 py-2 rounded-sm hover:bg-white hover:border-[#19183B] hover:border-2 hover:text-[#19183B] cursor-pointer">
+            <Link href="/login"
+             className="bg-[#19183B] text-[#E7F2EF] font-semibold px-6 py-2 rounded-sm hover:bg-white hover:border-[#19183B] hover:border-2 hover:text-[#19183B] cursor-pointer">
               Login
-            </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -61,9 +63,10 @@ export default function Navbar() {
           <Link href="/about" className="hover:underline">About</Link>
           <Link href="/courses" className="hover:underline">Courses</Link>
           <Link href="/contact" className="hover:underline">Contact</Link>
-          <button className="bg-[#19183B] text-[#E7F2EF] px-4 py-2 rounded hover:bg-[#A1C2BD] hover:border-[#19183B] hover:border-2 hover:text-[#19183B] cursor-pointer mt-2">
+          <Link href="/login"
+           className="bg-[#19183B] text-[#E7F2EF] px-4 py-2 rounded hover:bg-[#A1C2BD] hover:border-[#19183B] hover:border-2 hover:text-[#19183B] cursor-pointer mt-2">
             Login
-          </button>
+          </Link>
         </div>
       )}
     </nav>
