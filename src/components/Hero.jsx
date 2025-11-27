@@ -2,11 +2,15 @@
 
 import React, { useEffect, useState } from "react";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
+import { useRouter } from "next/navigation";
+
 
 
 export default function Hero() {
 
   const [courses, setCourses] = useState([]);
+  const router = useRouter();
+
 
   useEffect(() => {
     fetch("http://localhost:5000/courseData") 
@@ -27,15 +31,16 @@ export default function Hero() {
              Build the skills you need to grow in real-world digital marketing.</p>
 
              <div className="flex justify-center mt-4">
-                <button className="bg-[#19183B] flex gap-2 items-center  text-[#E7F2EF] px-6 py-2 rounded border-2 border-[#708993] cursor-pointer mt-2">
+                <button onClick={() => router.push("/courses")} 
+                 className="bg-[#19183B] flex gap-2 items-center  text-[#E7F2EF] px-6 py-2 rounded border-2 border-[#708993] cursor-pointer mt-2">
             Explore Courses <FaArrowUpRightFromSquare />
           </button>
              </div>
           </div>
-
-
+ 
+                 {/* courses */}
              <div className='max-w-11/12 mx-auto mt-10 '>
-              {/* courses */}
+              
 
              <h1 className='text-[#19183B] text-4xl font-bold text-center'>Our Courses</h1>
 
@@ -53,8 +58,51 @@ export default function Hero() {
           ))}
         </div>
 
-        <button className="mt-10 bg-[#19183B] text-[#E7F2EF] px-6 py-2 rounded cursor-pointer">Show All Courses</button>
+        <button onClick={() => router.push("/courses")} 
+         className="mt-10 bg-[#19183B] text-[#E7F2EF] px-6 py-2 rounded cursor-pointer">Show All Courses</button>
              </div> 
+            
+
+            {/* Instructor */}
+            <div className='max-w-11/12 mx-auto mt-14 mb-20 '>
+            <h1 className='text-[#19183B] text-4xl font-bold text-center'>Our Instructors</h1>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10   ">
+            
+            <div className=" p-4 h-[320px] shadow-lg bg-[#E7F2EF] rounded-sm flex flex-col items-center">
+              <h2 className="text-xl text-center font-bold text-[#19183B]">Search Engine Optimization (SEO)</h2>
+              <p className="text-base text-center font-medium text-[#19183B] mt-2">Expert SEO strategist with years of experience in optimizing websites for higher search rankings and organic traffic growth.</p>
+              <img src="/seo.jpeg" alt="" className="mt-2 rounded-full h-24 w-24 mx-auto"/>
+              <h3  className="mt-2 text-xl text-center font-bold text-[#19183B]">John Doe</h3>
+              <h3  className="mt-2 text-base text-center font-semibold text-[#19183B]">SEO Specialist</h3>
+            </div>
+
+            <div className=" p-4 h-[320px] shadow-lg bg-[#E7F2EF] rounded-sm flex flex-col items-center">
+              <h2 className="text-xl text-center font-bold text-[#19183B]">Social Media Marketing</h2>
+              <p className="text-base text-center font-medium text-[#19183B] mt-2">Expert SEO strategist with years of experience in optimizing websites for higher search rankings and organic traffic growth.</p>
+              <img src="/seo.jpeg" alt="" className="mt-2 rounded-full h-24 w-24 mx-auto"/>
+              <h3  className="mt-2 text-xl text-center font-bold text-[#19183B]">Robert Walton</h3>
+              <h3  className="mt-2 text-base text-center font-semibold text-[#19183B]">SMM Specialist</h3>
+            </div>
+
+            <div className=" p-4 h-[320px] shadow-lg bg-[#E7F2EF] rounded-sm flex flex-col items-center">
+              <h2 className="text-xl text-center font-bold text-[#19183B]">Content Marketing & Copywriting</h2>
+              <p className="text-base text-center font-medium text-[#19183B] mt-2">Expert SEO strategist with years of experience in optimizing websites for higher search rankings and organic traffic growth.</p>
+              <img src="/seo.jpeg" alt="" className="mt-2 rounded-full h-24 w-24 mx-auto"/>
+              <h3  className="mt-2 text-xl text-center font-bold text-[#19183B]">William Smith</h3>
+              <h3  className="mt-2 text-base text-center font-semibold text-[#19183B]">Content Marketing Specialist</h3>
+            </div>
+              
+            </div>
+
+            </div>
+
+             {/* feedback */}
+             
+               <div className='max-w-11/12 mx-auto mt-14 mb-20 '>
+               <h1 className='text-[#19183B] text-4xl font-bold text-center'>Student's Feedback</h1>
+               <h3  className="mt-2 text-base text-center font-semibold text-[#19183B]">See what student's are saying</h3>
+               </div>
     </div>
   )
 }

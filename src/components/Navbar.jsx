@@ -7,7 +7,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-[#A1C2BD] text-[#19183B] fixed w-full z-20 top-0 left-0 ">
+    <nav className="bg-[#E7F2EF] text-[#19183B] fixed w-full z-20 top-0 left-0 ">
       <div className="max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
 
@@ -23,12 +23,12 @@ export default function Navbar() {
             <Link href="/" className="hover:underline">Home</Link>
             <Link href="/about" className="hover:underline">About</Link>
             <Link href="/courses" className="hover:underline">Courses</Link>
-            <Link href="/success" className="hover:underline">Success</Link>
+            <Link href="/contact" className="hover:underline">Contact</Link>
           </div>
 
           {/* Login button */}
           <div className="hidden md:flex">
-            <button className="bg-[#19183B] text-[#E7F2EF] font-semibold px-6 py-2 rounded-sm hover:bg-[#A1C2BD] hover:border-[#19183B] hover:border-2 hover:text-[#19183B] cursor-pointer">
+            <button className="bg-[#19183B] text-[#E7F2EF] font-semibold px-6 py-2 rounded-sm hover:bg-white hover:border-[#19183B] hover:border-2 hover:text-[#19183B] cursor-pointer">
               Login
             </button>
           </div>
@@ -56,11 +56,11 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-[#A1C2BD] font-semibold px-2 pt-2 pb-3 space-y-1 flex flex-col">
+        <div className="md:hidden bg-[#E7F2EF] font-semibold px-2 pt-2 pb-3 space-y-1 flex flex-col">
           <Link href="/" className="hover:underline">Home</Link>
           <Link href="/about" className="hover:underline">About</Link>
           <Link href="/courses" className="hover:underline">Courses</Link>
-          <Link href="/success" className="hover:underline">Success</Link>
+          <Link href="/contact" className="hover:underline">Contact</Link>
           <button className="bg-[#19183B] text-[#E7F2EF] px-4 py-2 rounded hover:bg-[#A1C2BD] hover:border-[#19183B] hover:border-2 hover:text-[#19183B] cursor-pointer mt-2">
             Login
           </button>
